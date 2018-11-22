@@ -39,7 +39,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 1;
+                num2 = (num2 * 10) + 1;
                 txtDisplay.Text = num2.ToString();
             }
 
@@ -54,7 +54,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 2;
+                num2 = (num2 * 10) + 2;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -68,7 +68,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 3;
+                num2 = (num2 * 10) + 3;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -82,7 +82,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 4;
+                num2 = (num2 * 10) + 4;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -96,7 +96,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 5;
+                num2 = (num2 * 10) + 5;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -110,7 +110,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 6;
+                num2 = (num2 * 10) + 6;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -124,7 +124,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 7;
+                num2 = (num2 * 10) + 7;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -138,7 +138,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 8;
+                num2 = (num2 * 10) + 8;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -152,7 +152,7 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10) + 9;
+                num2 = (num2 * 10) + 9;
                 txtDisplay.Text = num2.ToString();
             }
         }
@@ -166,9 +166,75 @@ namespace Calculator
             }
             else
             {
-                num2 = (num1 * 10);
+                num2 = (num2 * 10);
                 txtDisplay.Text = num2.ToString();
             }
+        }
+
+        private void BtnDivide_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "/";
+            txtDisplay.Text = "0";
+        }
+
+        private void BtnMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "x";
+            txtDisplay.Text = "0";
+        }
+
+        private void BtnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "-";
+            txtDisplay.Text = "0";
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "+";
+            txtDisplay.Text = "0";
+        }
+
+        private void BtnEquals_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "/")
+            {
+                txtDisplay.Text = (num1 / num2).ToString();
+            } 
+            else if (operation == "x")
+            {
+                txtDisplay.Text = (num1 * num2).ToString();
+            }
+            else if (operation == "-")
+            {
+                txtDisplay.Text = (num1 - num2).ToString();
+            } 
+            else
+            {
+                txtDisplay.Text = (num1 + num2).ToString();
+            }
+        }
+
+        private void BtnClearEntry_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                num1 = 0;
+            } 
+            else
+            {
+                num2 = 0;
+            }
+
+            txtDisplay.Text = "0";
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            num1 = 0;
+            num2 = 0;
+            operation = "";
+            txtDisplay.Text = "0";
         }
     }
 }
